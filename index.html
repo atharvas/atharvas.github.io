@@ -1,48 +1,93 @@
+<!-- CHECKOUT THE SOURCE CODE HERE !> https://github.com/cadars/john-doe/ -->
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-	<title>Home - atharvas</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width">
-	<link rel="stylesheet" type="text/css" href="/css/style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <title>Atharva Sehgal</title>
+  <meta name="description" content="Atharva's personal website. Owned and Maintained by atharvas">
+
+  <!-- Recommended minimum -->
+  <meta property="og:title" content="Atharva's homepage">
+  <meta property="og:description" content="Atharva's personal website. Owned and Maintained by atharvas">
+  <meta property="og:image" content="img/site-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- You could also inline the stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
-	<header>
-		<h1>atharvas website</h1>
-		<nav>
-			<a href="/">Home</a> |
-			<a href="/research/">Research</a> |
-			<a href="/guides/">Guides</a>
-		</nav>
-	</header>
 
-	<main>
-		<h2>Hello Internet!</h2>
-		<p>This is my webpage. The research section is devoted to my academic work. The guides section is devoted to
-			troubleshooting engineering work.
-		<p>
-			<hr />
-		<h2>Most recent additions:</h2>
-		<ul>
-			<li>
-				<a href="https://misailo.cs.illinois.edu/papers/statheros-dac21.pdf">Statheros - A low-level PPL compiler</a>
-				- A paper outlining tricks to run probabilistic programs on arduino's and rasperry pi's.
-			</li>
-			<li><a href="/guides/dreamcoder">Running DreamCoder</a>
-				- An overview of running dreamcoder.</li>
-		</ul>
-		<hr />
-		<h2>Projects:</h2>
-		<ul>
-			<li><a href="https://anonymousocean.github.io/">VDP</a> - A neurosymbolic pipeline for visual discrimination.</li>
-		</ul>
-		<hr />
+  <header>
+    <h1>
+      <a href="#home">Atharva Sehgal</a>
+    </h1>
+    <nav>
+      <!-- <a href="#about">About</a> -->
+      <a href="#publications">Publications</a>
+      <a href="#news">News</a>
+      <a href="static/Academic_CV.pdf">Resume</a>
+    </nav>
+  </header>
 
-		<h2>Contact</h2>
-		<p>If you found anything on this site interesting, feel free to reach out to me at <code>atharvas (at) utexas (dot) edu</code> </p>
-	</main>
+  <main>
+
+    <section id="home">
+      <!-- HOME -->
+
+      <h1>Hello Internet!</h1>
+      <p>I'm Atharva. I'm a PhD student at UT Austin working with <a href="https://www.cs.utexas.edu/~swarat">Swarat
+          Chaudhuri</a>. I work at the intersection of Program Synthesis and Deep Learning. Previously, I was at UIUC
+        where I was working on neurosymbolic learning with <a href="http://madhu.cs.illinois.edu/">Madhusudhan
+          Parthasarathy</a> and approximate algorithms for probabilistic programming with <a
+          href="http://misailo.web.engr.illinois.edu/">Sasa Misailovic</a>.</p>
+      <p>Feel free to contact me at: <code>(firstname) (dot) (lastname) (at) (gmail.com|utexas.edu)</code></p>
+    </section>
+
+    <section id="news">
+      <ul>
+        <li>
+          <article>
+            <h2>Moving to UT Austin!<time datetime="2021-06-01">Summer 2021</time></h2>
+          </article>
+        </li>
+        <li>
+          <article>
+            <h2>Graduated from UIUC!<time datetime="2021-05-01">Spring 2021</time></h2>
+          </article>
+        </li>
+        <li>
+          <article>
+            <h2>Stetheos Accepted to DAC'2021!<time datetime="2021-02-01">Spring 2021</time></h2>
+          </article>
+        </li>
+      </ul>
+    </section>
+
+    <section id="publications">
+      <h2>2021</h2>
+      <ul>
+        <li>
+          <article>
+            <h2>Statheros: A Compiler for Efficient Low-Precision Probabilistic Programming</h2>
+            <div class='authors'>Jacob Laurel, Rem Yang, <u>Atharva Seghal</u>, Shubham Ugare, Sasa Misailovic</div>
+            <a href="https://www.dac.com/">DAC 2021</a>
+            <a href="static/DAC21.pdf">Full Text</a>
+          </article>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- Other images -->
+
+  <!-- <a href="#about" class="lightbox" id="img-about"><img loading="lazy" alt=""
+      src="//dummyimage.com/2400x1200/ddd/bbb"></a> -->
 
 </body>
 
