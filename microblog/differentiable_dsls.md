@@ -73,4 +73,5 @@ No free lunch, amirite? The biggest issue with this approach is that we are esse
 - Neuro-Symbolic Concept Learner (Mao et al.)
 - Jiajun Wu's Dissertation
 - Task Programming (Sun et al.)
+
 Lemme know if you have any thoughts/opinions/concerns about this! (`atharva.sehgal@gmail.com`)
