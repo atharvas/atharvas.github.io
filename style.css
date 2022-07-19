@@ -266,13 +266,13 @@ input:checked+small {
 
 .leftsplit {
   float: left;
-  width: 66.66666%;
+  width: 75%;
   padding: 0.5%;
 }
 
 .rightsplit {
   float: left;
-  width: 33.33333%;
+  width: 25%;
   padding: 0.5%;
 }
 
