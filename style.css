@@ -258,7 +258,7 @@ input:checked+small {
 
 /* ------- Split ------- */
 
-.twosplit:after {
+/* .twosplit:after {
   content: "";
   display: table;
   clear: both;
@@ -266,15 +266,15 @@ input:checked+small {
 
 .leftsplit {
   float: left;
-  width: 75%;
+  width: 25%;
   padding: 0.5%;
 }
 
 .rightsplit {
   float: left;
-  width: 25%;
+  width: 75%;
   padding: 0.5%;
-}
+} */
 
 section > img {
   display: block;
