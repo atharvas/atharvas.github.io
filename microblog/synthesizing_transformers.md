@@ -1,6 +1,6 @@
 # Transformer Distillation
 
-**TL;DR**: `RASP` is a tensor processing language which provides a language to hand-write transformers. In this report, we survey the main features of RASP and how these features can be leveraged for synthesis. The synthesis task is formulated as a regression task given a synthetically generated dataset of input-output examples. Several complications arise while attempting different synthesis techniques. Overall, I tried Bottom up synthesis, top-down synthesis, and library learning. I wasn't able to get conclusive results from the library learning experiments.
+**TL;DR**: `RASP` is a tensor processing language which provides a language to hand-write transformers. In this report, we survey the main features of RASP and how these features can be leveraged for synthesis. The synthesis task is formulated as a regression task given a synthetically generated dataset of input-output examples. Several complications arise while attempting different synthesis techniques. Overall, I tried Bottom up synthesis, top-down synthesis, and library learning. I'm still working on the library learning experiments!
 
 ## Section 1: Motivation
 

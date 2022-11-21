@@ -1,2 +1,2 @@
 #!/bin/bash
-scp microblog/* prose.sh:/
+scp microblog/[^\_]* prose.sh:/
