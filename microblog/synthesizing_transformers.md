@@ -260,7 +260,7 @@ The original OCaml program compressor struggles to find even simple abstractions
 
 ## Section 4: Conclusion
 
-Overall, I tried synthesizing programs using top-down synthesis , bottom-up synthesis, and library learning. Library learning seems the most promising because we already have a corpora of program abstractions that we can leverage to solving more problems. However, Stitch is not ready to be used with DreamCoder. In fact, I was the second Stitch user (after the authors). 
+Overall, I tried synthesizing programs using top-down synthesis , bottom-up synthesis, and library learning. Library learning seems the most promising because we already have a corpora of program abstractions that we can leverage to solving more problems. However, Stitch is not ready to be used with DreamCoder
 
 I'd love to pursue this topic as a serious research problem in the future.
 
