@@ -1,120 +1,190 @@
-@font-face {
-    font-family: "San Francisco Bold";
-    /* font-weight: 400; */
-    src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-bold-webfont.woff");
-}
-@font-face {
-    font-family: "San Francisco Light";
-    /* font-weight: 400; */
-    src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-light-webfont.woff");
-}
-@font-face {
-    font-family: "San Francisco";
-    /* font-weight: 400; */
-    src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
-}
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 body {
-    font-family: "San Francisco";
-    padding: 1.5rem 0.5rem 1.5rem 0.5rem;
-    font-size: small;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #333333;
+    background-color: #FAFAFA;
+}
+
+.main-container {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1.5rem;
+    background-color: #FFFFFF;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (min-width: 800px) {
+    .main-container {
+        width: 900px;
+    }
+}
+
+@media print {
+    body {
+        color: black;
+        background: white;
+        font-size: 12pt;
+    }
+
+    .main-container {
+        box-shadow: none;
+        background-color: white;
+    }
+
+    h1, h2 {
+        color: black;
+    }
+
+    .hide-on-print {
+        display: none;
+    }
+}
+
+h1, h2 {
+    font-weight: 700;
+    color: #2A2A2A;
+    margin-bottom: 0.5rem;
 }
 
 h1 {
-    font-family: "San Francisco Bold";
-    font-size: 375%;
-    font-weight: 800;
-    margin: 0;
-    /* line-height: 1.1; */
+    font-size: 2.5rem;
 }
+
 h2 {
-    font-family: "San Francisco Bold";
-    font-size: 200%;
-    font-weight: 400;
-    margin: 0;
+    font-size: 1.5rem;
+    border-bottom: 2px solid #333333;
 }
 
 hr {
-    /* border-top: 5px solid #000000; */
-    /* margin: 0.5; */
+    border: none;
+    height: 1px;
+    background-color: #CCCCCC;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
 }
 
 ul {
     list-style-type: none;
     padding: 0;
-    margin-top: 0.25rem;
-    margin-bottom: 0.25rem;
+    margin: 0;
 }
 
 strong {
-    font-family: "San Francisco Bold";
-    font-weight: 400;
-}
-
-
-.heading {
-    display: flex;
-}
-
-.left-heading {
-    flex: 50%;
-}
-
-.right-heading {
-    flex: 50%;
-    font-family: "San Francisco Light";
-    /* font-size: 65%; */
-    text-align: right;
-    break-inside: avoid;
-}
-
-.section {
-    padding: 0.5rem 0 0 0;
-    margin: 0;
-}
-
-.section-title {
-
-}
-
-.section-body {
-}
-
-.tape {
-    display: flex;
-}
-
-.left-tape {
-    flex: 50%;
     font-weight: bold;
 }
 
-.right-tape {
-    flex: 50%;
-    font-family: "San Francisco Light";
+.heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.left-heading, .right-heading {
+    flex-basis: 50%;
+}
+
+.right-heading {
     text-align: right;
-    color: gray;   
+    font-size: 0.9rem;
+    color: #666666;
 }
 
-
-.content {
-    font-weight: 200;
+.section {
+    margin-bottom: 1rem;
 }
 
-.section-divider {
-    margin: 0;
+.section-title {
+    margin-bottom: 0.5rem;
+}
+
+.section-content, .section-content div {
+    margin-bottom: 0.5rem;
 }
 
 .left-division {
     width: 30%;
-    font-weight: bold;
     float: left;
+    font-weight: bold;
 }
 
 .right-division {
-    margin-left: 30%;
-    /* Change this to whatever the width of your left column is*/
+    margin-left: 35%;
 }
+
 .clear-division {
     clear: both;
+}
+
+.education-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 1rem;
+}
+
+.education-dates {
+    font-style: italic;
+    color: #666666;
+    white-space: nowrap;
+}
+
+.publication-title-venue {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.publication-venue {
+    color: #666666;
+}
+
+code {
+    font-family: 'Roborto', monospace;
+    font-size: 0.9rem;
+    color: #666666;
+}
+
+.publication-item > div:first-child {
+    margin-bottom: 0;
+}
+
+.publication-item > div:last-child {
+    margin-top: 0;
+}
+
+.project-item {
+    margin-bottom: 1rem;
+}
+
+.project-title-date {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.project-date {
+    font-style: italic;
+    color: #666666;
+}
+
+.project-item a {
+    font-family: 'Courier New', monospace;
+    color: #666666;
+    word-break: break-all;
+}
+
+.technical-strengths, .coursework {
+    margin-bottom: 1rem;
+}
+
+.technical-strengths strong, .coursework strong {
+    font-weight: bold;
+    margin-right: 0.5rem;
 }
