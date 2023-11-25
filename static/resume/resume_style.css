@@ -111,7 +111,7 @@ strong {
 .left-division {
     width: 30%;
     float: left;
-    font-weight: bold;
+    /* font-weight: bold; */
 }
 
 .right-division {
@@ -151,12 +151,9 @@ code {
     color: #666666;
 }
 
-.publication-item > div:first-child {
-    margin-bottom: 0;
-}
-
-.publication-item > div:last-child {
+.publication-item > div {
     margin-top: 0;
+    margin-bottom: 0;
 }
 
 .project-item {
@@ -175,7 +172,7 @@ code {
 }
 
 .project-item a {
-    font-family: 'Courier New', monospace;
+    font-family: 'Roborto', monospace;
     color: #666666;
     word-break: break-all;
 }
@@ -187,4 +184,15 @@ code {
 .technical-strengths strong, .coursework strong {
     font-weight: bold;
     margin-right: 0.5rem;
+}
+
+.publication-authors {
+    /* font-style: italic; */
+    color: #666666;
+    font-size: small;
+}
+
+date {
+    font-style: italic;
+    color: #666666;
 }
