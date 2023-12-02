@@ -11,6 +11,11 @@
 </head>
 
 <body>
+    <div class="header hide-on-print">
+        <center>
+        Print this page to PDF to save a copy. The content is editable for light modifications. Elements with <code>hide-on-print</code> (like this one) won't show. Use browser print settings to customize the output till relevant sections fit on one page. To copy this style, visit <a href="https://atharvas.net/static/resume/index.html"><code>atharvas.net/static/resume/index.html</code></a>. The format is inspired by <a href="https://0xsk.io">Shreyas'</a> (much better) resume.
+        </center>
+    </div>
     <div class="main-container" contenteditable="true">
         <div class="heading">
             <div class="left-heading">
@@ -41,9 +46,121 @@
                 <div class="education-item">
                     <div>
                         <strong>B.S. in Computer Science</strong>, University of Illinois Urbana Champaign<br />
-                        Graduated with high honors. Minor in Linguistics. James Scholar.
+                        Graduated with high honors. GPA 3.88. Minor in Linguistics. James Scholar.
                     </div>
                     <div class="education-dates">August 2017 - May 2021</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">
+                <h2>Experience</h2>
+                <!-- <hr style="margin:0; border-top : 2px solid #000000" /> -->
+            </div>
+            <div class="section-content">
+                <div class="experience-item">
+                    <div class="left-division">
+                        <strong>Trishul Lab, UT Austin</strong><br />
+                        Graduate Researcher<br />
+                        <date>June 2021 - Present</date>
+                    </div>
+                    <div class="right-division">
+                        Developing neuro-symbolic techniques for visual reasoning, program synthesis, and structured
+                        learning. Working on foundational models for visual reasoning and scientific discovery.
+                    </div>
+                    <div class="clear-division"></div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="left-division">
+                        <strong>Madhusudhan Parthasarathy's Group, UIUC</strong><br />
+                        Undergraduate Researcher<br />
+                        <date>August 2020 - May 2021</date>
+                    </div>
+                    <div class="right-division">
+                        Developed a novel dataset of visual discrimination puzzles (VDPs). Used Python/PyTorch/Tensorflow to develop and test computer vision models to achieve state-of-the-art performance on VDPs.
+                        Utilized few shot classification models like a scene-graph generator (Mask RCNN backbone), an object detector (YOLO backbone), a VAE prototypical model, and a triplet-loss contrastive model.
+                    </div>
+                    <div class="clear-division"></div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="left-division">
+                        <strong>Sasa Misailovic's Group, UIUC</strong><br />
+                        Undergraduate Researcher<br />
+                        <date>February 2020 - December 2021</date>
+                    </div>
+                    <div class="right-division">
+                        Formulated and engineered a compiler for efficient low-precision probabilistic programming in
+                        C++17. Developed experiments for the project and built a testbench measuring power usage,
+                        accuracy, and runtime on various platforms.
+                    </div>
+                    <div class="clear-division"></div>
+                </div>
+                <div class="experience-item">
+                    <div class="left-division">
+                        <strong>InMobi</strong><br />
+                        Data Science Intern<br />
+                        <date>May 2018 - August 2018</date>
+                    </div>
+                    <div class="right-division">
+                        Implemented three features for conversion rate (CVR) and click-through rate prediction models extensively used within InMobi.
+                        These features were based on hierarchical clustering of geospatial data and organic installs. Results and analysis used to improve CVR prediction models.
+                    </div>
+                    <div class="clear-division"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">
+                <h2>Projects</h2>
+                <!-- <hr style="margin:0; border-top : 2px solid #000000" /> -->
+            </div>
+            <div class="section-content">
+                <div class="project-item">
+                    <div class="project-title-date">
+                        <strong>Neural Distillation of Transformers</strong>
+                        <span class="project-date">December 2022</span>
+                    </div>
+                    Engineered an algorithm for automatically synthesizing a program given any reference transformer implementation.
+                    Used library learning to discover common programs and construct program abstractions.
+                    <!-- Report available at: <a href="https://blog.atharvas.net/synthesizing-transformers"><code>blog.atharvas.net/synthesizing-transformers</code></a> -->
+                </div>
+        
+                <div class="project-item">
+                    <div class="project-title-date">
+                        <strong>Programmatic Structured Pruning of CNNs</strong>
+                        <span class="project-date">May 2022</span>
+                    </div>
+                    Developed a tensor programming language to describe any CNN network and designed a novel synthesis mechanism to hierarchically distill a CNN into an executable program.
+                    Achieved a 98% compression ratio with only a 1% accuracy drop on the CoCo dataset.
+                    <!-- Poster available at: <a href="https://atharvas.net/static/cnndistillationposter.pdf"><code>atharvas.net/static/cnndistillationposter.pdf</code></a> -->
+                </div>
+        
+                <div class="project-item">
+                    <div class="project-title-date">
+                        <strong>EuclidTrainer</strong>
+                        <span class="project-date">December 2021</span>
+                    </div>
+                    Utilized Euclidean geometry for calculating precise 3D pose estimations from 2D pose estimation models for static videos. Applied this to create a weight training recommendation algorithm. 
+                    <!-- Code available at: <a href="https://github.com/coreykarnei/EuclidTrainer"><code>github.com/coreykarnei/EuclidTrainer</code></a> -->
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">
+                <h2>Technical Strengths</h2>
+                <!-- <hr style="margin:0; border-top : 2px solid #000000" /> -->
+            </div>
+            <div class="section-content">
+                <div class="technical-strengths">
+                    <strong>Computer Languages:</strong> Python, C, C++14, Haskell, HTML/CSS/JavaScript, OCaml
+                </div>
+                <div class="technical-strengths">
+                    <strong>Frameworks:</strong> PyTorch/TensorFlow/Scipy, Pandas/Dask, NetworkX, Coq/Lean, Z3, Pyro
                 </div>
             </div>
         </div>
@@ -59,7 +176,6 @@
                         <strong>Neurosymbolic Grounding for Compositional World Models</strong>
                         <span class="publication-venue">In Review 2023</span>
                     </div>
-                    <!-- Atharva Sehgal, Arya Grayeli, Jennifer J. Sun, Swarat Chaudhuri -->
                     <div class="publication-authors"><strong>Atharva Sehgal</strong>, Arya Grayeli, Jennifer J. Sun, Swarat Chaudhuri</div>
                     <div class="publication-url hide-on-print"><a href="https://arxiv.org/abs/2310.12690"><code>https://arxiv.org/abs/2310.12690</code></a></div>
                 </div>
@@ -142,101 +258,6 @@
             </div>
         </div>
 
-        <div class="section">
-            <div class="section-title">
-                <h2>Projects</h2>
-                <!-- <hr style="margin:0; border-top : 2px solid #000000" /> -->
-            </div>
-            <div class="section-content">
-                <div class="project-item">
-                    <div class="project-title-date">
-                        <strong>Neural Distillation of Transformers</strong>
-                        <span class="project-date">December 2022</span>
-                    </div>
-                    Designed and engineered an algorithm for automatically synthesizing a program given any reference transformer implementation. Used library learning to discover common programs and construct program abstractions. Whitesheet report available at: <a href="https://blog.atharvas.net/synthesizing-transformers"><code>blog.atharvas.net/synthesizing-transformers</code></a>
-                </div>
-        
-                <div class="project-item">
-                    <div class="project-title-date">
-                        <strong>Programmatic Structured Pruning of CNNs</strong>
-                        <span class="project-date">May 2022</span>
-                    </div>
-                    Developed a tensor programming language to describe any CNN network and designed a novel synthesis mechanism to hierarchically distill a CNN into an executable program. Achieved a 98% compression ratio with only a 1% accuracy drop on the CoCo dataset. Poster available at: <a href="https://atharvas.net/static/cnndistillationposter.pdf"><code>atharvas.net/static/cnndistillationposter.pdf</code></a>
-                </div>
-        
-                <div class="project-item">
-                    <div class="project-title-date">
-                        <strong>EuclidTrainer</strong>
-                        <span class="project-date">December 2021</span>
-                    </div>
-                    Utilized Euclidean geometry for calculating precise 3D pose estimations from 2D pose estimation models for static videos. Applied this to create a weight training recommendation algorithm. Code available at: <a href="https://github.com/coreykarnei/EuclidTrainer"><code>github.com/coreykarnei/EuclidTrainer</code></a>
-                </div>
-            </div>
-        </div>
-        
-        <div class="section">
-            <div class="section-title">
-                <h2>Experience</h2>
-                <!-- <hr style="margin:0; border-top : 2px solid #000000" /> -->
-            </div>
-            <div class="section-content">
-                <div class="experience-item">
-                    <div class="left-division">
-                        <strong>Trishul Lab, UT Austin</strong><br />
-                        Graduate Researcher<br />
-                        <date>June 2021 - Present</date>
-                    </div>
-                    <div class="right-division">
-                        Developing neuro-symbolic techniques for visual reasoning, program synthesis, and structured
-                        learning.
-                    </div>
-                    <div class="clear-division"></div>
-                </div>
-
-                <div class="experience-item">
-                    <div class="left-division">
-                        <strong>Madhusudhan Parthasarathy’s Research Group, UIUC</strong><br />
-                        Undergraduate Researcher<br />
-                        <date>August 2020 - May 2021</date>
-                    </div>
-                    <div class="right-division">
-                        Developed a synthetic dataset of visual discrimination puzzles and novel neuro-symbolic and
-                        neural architectures for solving these puzzles. Contributed to the development of multiple novel
-                        CV models for few-shot classification, including scene-graph generators and object detectors.
-                    </div>
-                    <div class="clear-division"></div>
-                </div>
-
-                <div class="experience-item">
-                    <div class="left-division">
-                        <strong>Sasa Misailovic’s Research Group, UIUC</strong><br />
-                        Undergraduate Researcher<br />
-                        <date>February 2020 - December 2021</date>
-                    </div>
-                    <div class="right-division">
-                        Formulated and engineered a compiler for efficient low-precision probabilistic programming in
-                        C++17. Developed experiments for the project and built a testbench measuring power usage,
-                        accuracy, and runtime on various platforms.
-                    </div>
-                    <div class="clear-division"></div>
-                </div>
-            </div>
-        </div>
-
-        <div class="section">
-            <div class="section-title">
-                <h2>Technical Strengths</h2>
-                <!-- <hr style="margin:0; border-top : 2px solid #000000" /> -->
-            </div>
-            <div class="section-content">
-                <div class="technical-strengths">
-                    <strong>Computer Languages:</strong> Python, C, C++14, Haskell, JavaScript, OCaml
-                </div>
-                <div class="technical-strengths">
-                    <strong>Frameworks:</strong> PyTorch, TensorFlow, Pyro, Z3, Pandas/Dask, NetworkX
-                </div>
-            </div>
-        </div>
         
         <div class="section">
             <div class="section-title">
