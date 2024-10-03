@@ -11,14 +11,6 @@
 
 }
 
-@media (prefers-color-scheme: dark) {
-  * {
-    --textcolor: #dadada;
-    --bgcolor: #141414;
-    --highlight: #ffc400;
-  }
-}
-
 body {
   font-size: 18px;
   font-family: system-ui, sans-serif;

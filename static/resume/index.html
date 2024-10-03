@@ -13,7 +13,7 @@
 <body>
     <div class="header hide-on-print">
         <center>
-        Print this page to PDF to save a copy. The content is editable for light modifications. Elements with <code>hide-on-print</code> (like this one) won't show. Use browser print settings to customize the output till relevant sections fit on one page. To copy this style, visit <a href="https://atharvas.net/static/resume/index.html"><code>atharvas.net/static/resume/index.html</code></a>. The format is inspired by <a href="https://0xsk.io">Shreyas'</a> (much better) resume.
+        Print this page to PDF to save a copy. The content is editable for light modifications. Elements with <code>hide-on-print</code> (like this one) won't show. Use browser print settings to customize the output till relevant sections fit on one page. Feel free to copy this style! The format is inspired by <a href="https://0xsk.io">Shreyas'</a> (much better) resume.
         </center>
     </div>
     <div class="main-container" contenteditable="true">
@@ -27,7 +27,17 @@
                 linkedin.com/in/atharvas <i class="fa fa-linkedin"></i>
             </div>
         </div>
-        <!-- <hr style="margin:0.1rem; border-top : 1px solid #000000" /> -->
+        <!-- <div class="section">
+            <div class="section-title">
+                <h2>Research Interests</h2>
+            </div>
+            <div class="section-content">
+                <p>
+                    My research focuses on program synthesis algorithms for visual reasoning and scientific discovery.
+                    Broadly, I'm interested in making AI systems that can reason about, reason within and reason across diverse scientific domains and modalities.
+                </p>
+            </div>
+        </div> -->
 
         <div class="section">
             <div class="section-title">
@@ -35,6 +45,13 @@
                 <!-- <hr style="margin:0; border-top : 2px solid #000000" /> -->
             </div>
             <div class="section-content">
+                <div class="education-item">
+                    <div>
+                        <strong>Visiting Student Researcher</strong>, Caltech<br />
+                        Working with Yisong Yue on machine learning and AI4Science.
+                    </div>
+                    <div class="education-dates">August 2024 - Present</div>
+                </div>
                 <div class="education-item">
                     <div>
                         <strong>PhD in Computer Science</strong>, University of Texas Austin<br />
@@ -58,14 +75,14 @@
                 <!-- <hr style="margin:0; border-top : 2px solid #000000" /> -->
             </div>
             <div class="section-content">
-                <!-- <div class="publication-item">
+                <div class="publication-item">
                     <div class="publication-title-venue">
                         <strong>LaSR: Symbolic Regression with a Learned Concept Library</strong>
-                        <span class="publication-venue">Preprint (2024)</span>
+                        <span class="publication-venue">NeurIPS 2024</span>
                     </div>
                     <div class="publication-authors">Arya Grayeli*, <strong>Atharva Sehgal*</strong>, Omar Costilla-Reyes, Miles Cranmer, Swarat Chaudhuri</div>
-                    <div class="publication-url hide-on-print"><a href="https://atharvas.net/static/lasr.pdf"><code>https://atharvas.net/static/lasr.pdf</code></a></div>
-                </div> -->
+                    <div class="publication-url hide-on-print"><a href="https://arxiv.org/abs/2409.09359"><code>https://arxiv.org/abs/2409.09359</code></a></div>
+                </div>
 
                 <div class="publication-item">
                     <div class="publication-title-venue">
@@ -158,8 +175,8 @@
                         <date>May 2018 - August 2018</date>
                     </div>
                     <div class="right-division">
-                        Implemented three features for conversion rate (CVR) and click-through rate prediction models extensively used within InMobi.
-                        These features were based on hierarchical clustering of geospatial data and organic installs. Results and analysis used to improve CVR prediction models.
+                        Implemented three features for conversion rate and click-through rate prediction models extensively used within InMobi.
+                        These features were based on agglomerative clustering of geospatial data and organic installs. Results and analysis used to improve CVR prediction models.
                     </div>
                     <div class="clear-division"></div>
                 </div>
@@ -172,6 +189,17 @@
                 <!-- <hr style="margin:0; border-top : 2px solid #000000" /> -->
             </div>
             <div class="section-content">
+                <div class="project-item">
+                    <div class="project-title-date">
+                        <strong><code>neurosym</code> Library</strong>
+                        <span class="project-date">August 2023</span>
+                    </div>
+                    The <code>neurosym</code> library is a Python package for neurosymbolic program synthesis. 
+                    It is the first framework which integrates tools for DSL design, program search, and program abstraction in a self contained package.
+                    Used extensively in research, production, and teaching. Joint work with collaborators at MIT.
+                    <!-- Report available at: <a href="https://blog.atharvas.net/synthesizing-transformers"><code>blog.atharvas.net/synthesizing-transformers</code></a> -->
+                </div>
+
                 <div class="project-item">
                     <div class="project-title-date">
                         <strong>Neural Distillation of Transformers</strong>
@@ -230,9 +258,10 @@
                         <!-- <date>2023</date> -->
                     </div>
                     <div class="right-division">
-                        <strong>ICML</strong> (2023)<br />
-                        <strong>NeurIPS</strong> (2022, 2023)<br />
-                        <strong>ICLR (Neurosymbolic Generative Models)</strong> (2022)<br />
+                        <strong>ICML</strong> (2023),
+                        <strong>NeurIPS</strong> (2022, 2023, 2024),
+                        <strong>ICLR</strong> (2022, 2024),
+                        <strong>AISTATS</strong> (2025)
                     </div>
                     <div class="clear-division"></div>
                 </div>
@@ -242,9 +271,9 @@
                         <!-- <date>2023</date> -->
                     </div>
                     <div class="right-division">
-                        <strong>Tutorial on Neurosymbolic Programming</strong> POPL, 2023<br />
-                        <strong>Tutorial on Neurosymbolic Programming</strong> Neurosym Summer School, 2022<br />
-                        <a href="neurosymbolic-learning.github.io/popl23tutorial/"><code>neurosymbolic-learning.github.io/popl23tutorial/</code></a>
+                        <strong>Neurosymbolic Programming and Scientific Discovery</strong> Chalmers University<br />
+                        <strong>Tutorial on Neurosymbolic Programming</strong> Neurosym Summer School (2022), POPL (2023), ICSE (2024), Neurosym Summer School (2024)<br />
+                        <a href="neurosymbolic-learning.github.io/popl23tutorial/"><code>tinyurl.com/neurosym</code></a>
                     </div>
                     <div class="clear-division"></div>
                 </div>
@@ -254,8 +283,9 @@
                         <!-- <date>2023</date> -->
                     </div>
                     <div class="right-division">
+                        <strong>Math Tutor</strong> Caltech Y Youth of Promise (FA24)<br />
                         <strong>College Math Prep (Co-Instructor)</strong> Coleman State Prison (FA23)<br />
-                        <strong>DiRP: Neurosymbolic Programming (Instructor)</strong> UT Austin (FA23, SP23)<br />
+                        <strong>DiRP: Neurosymbolic Programming (Instructor)</strong> UT Austin (SP24, FA23, SP23)<br />
                         <strong>Honors: Embedded Systems (TA)</strong> UIUC (SP20)<br/>
                         <strong>Honors: Algorithms for String Processing (TA)</strong> UIUC (FA20, SP21)<br/>
                         <strong>Data Structures and Algorithms (TA)</strong> UIUC (FA19, SP20, FA20, SP21)<br/>
@@ -274,8 +304,8 @@
             </div>
             <div class="section-content">
                 <div class="coursework">
-                    Computer Vision, Robot Learning, Program Synthesis,
-                    Data Driven Algorithm Design, Programming Languages, Trustworthy ML
+                    Program Synthesis,  Computer Vision, Robot Learning, Data Driven Algorithm Design,
+                    Programming Languages, Trustworthy ML
                 </div>
             </div>
         </div>
