@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en" class="bg-slate-50 min-w-[300px]">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Atharva's homepage" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <title>Atharva Sehgal's homepage</title>
+  </head>
+  <body>
+    <div class="flex justify-center">
+      <div class="w-full max-w-4xl py-6 px-5">
+        <slot />
+      </div>
+    </div>
+  </body>
+  <style is:global>
+    /* Declare a custom CSS class to make the icon look right */
+    .svg-inline--fa {
+      overflow: visible;
+      box-sizing: content-box;
+      display: inline-block;
+      height: 1em;
+      vertical-align: -0.125em;
+    }
+
+    
+    
+  </style>
+</html>

@@ -1,0 +1,20 @@
+---
+interface Props {
+    href: string;
+    target?: string;
+    rel?: string;
+    //   class argument that defaults to "text-blue-700 underline decoration-dotted hover:decoration-solid"
+    //   if not provided
+    class?: string;
+}
+const { href, target, rel, class: classes } = Astro.props;
+// If the class argument is not provided, use the default class
+const defaultClasses =
+    "text-teal-700 underline decoration-dotted hover:decoration-solid";
+const classList = classes ? `${defaultClasses} ${classes}` : defaultClasses;
+---
+
+<a href={href} target={target} rel={rel} class={classList}>
+    <slot />
+    <!-- Slotted text goes here -->
+</a>

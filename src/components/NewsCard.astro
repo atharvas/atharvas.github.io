@@ -1,0 +1,38 @@
+---
+import Link from './Link.astro';
+
+interface NewsItem {
+  date: string;
+  news: string;
+  links: { name: string; url: string }[];
+}
+
+// Single-item props
+interface Props {
+  item: NewsItem;
+}
+
+const { item } = Astro.props;
+---
+
+<!-- Left Column -->
+<div class="text-right">
+  <h2 class="font-semibold text-m lg:text-lg text-gray-900">{item.date}</h2>
+  {item.links?.length > 0 && (
+    <div class="text-m lg:text-lg text-blue-900">
+      {item.links.map((link, idx) => (
+        <>
+          <Link href={link.url} class="hover:underline">
+            {link.name}
+          </Link>
+          {idx < item.links.length - 1 && ' | '}
+        </>
+      ))}
+    </div>
+  )}
+</div>
+
+<!-- Right Column -->
+<div>
+  <p class="text-m lg:text-lg text-gray-800">{item.news}</p>
+</div>

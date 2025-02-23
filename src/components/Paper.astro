@@ -1,0 +1,146 @@
+---
+import Card from './Card.astro';
+import Link from './Link.astro';
+
+interface PaperItem {
+  hide: boolean;
+  title: string;
+  url: string;
+  authors: string;
+  date: string;
+  venue: string;
+  description: string;
+  links: { name: string, url: string }[];
+  image: string;
+  alt?: string;
+}
+
+interface Props {
+  items: PaperItem[];
+}
+
+// Astro will provide the props you pass into this component in `Astro.props`:
+const { items } = Astro.props;
+
+/**
+ * parseAuthors(authors: string)
+ * 
+ * Splits a string of comma-separated authors, trims each name,
+ * converts trailing '*' into a superscript, and underscores into bold.
+ */
+function parseAuthors(authors: string): string {
+  let authorsList = authors
+    .split(',')
+    .map((author) => author.trim());
+
+  // Replace _author_ with a bold span and *author* with a superscript
+  authorsList = authorsList.map((author) => {
+    const boldRegex = /_(.*?)_/g;
+    const superscriptRegex = /\*(.*?)\*/g;
+
+    let boldMatch = boldRegex.exec(author);
+    let superscriptMatch = superscriptRegex.exec(author);
+
+    while (boldMatch) {
+      author = author.replace(boldMatch[0], `<span class="font-bold">${boldMatch[1]}</span>`);
+      boldMatch = boldRegex.exec(author);
+    }
+
+    while (superscriptMatch) {
+      author = author.replace(superscriptMatch[0], `<sup>${superscriptMatch[1]}</sup>`);
+      superscriptMatch = superscriptRegex.exec(author);
+    }
+
+    return author;
+  });
+
+  return authorsList.join(', ');
+}
+
+// Separate the items into visible and hidden groups
+const visibleItems = items.filter(item => !item.hide);
+const hiddenItems = items.filter(item => item.hide);
+---
+
+<section class="mt-20 mb-10">
+  <div class="mb-5">
+    <h1 class="font-bold text-3xl">Research projects</h1>
+    <p class="leading-8 text-gray-600">
+      For a complete list, consult 
+      <Link href="https://scholar.google.com/citations?user=dj1yDdIAAAAJ&hl=en">Google Scholar</Link>
+    </p>
+    <p class="leading-8 text-gray-600">* denotes equal contribution</p>
+  </div>
+
+  {/* Render visible items */}
+  {visibleItems.map(item => (
+    <Card
+      title={item.title}
+      url={item.url}
+      authors={parseAuthors(item.authors)}
+      date={item.date}
+      venue={item.venue}
+      description={item.description}
+      links={item.links}
+      image={item.image}
+      alt={item.alt ?? ""}
+    />
+  ))}
+
+  {/* If there are any hidden items, render the toggle button and hidden items container */}
+  {hiddenItems.length > 0 && (
+    <div>
+      <button id="toggle-hidden" class="flex items-center mt-2 focus:outline-none">
+        <svg id="dropdown-icon" class="w-6 h-6 transform transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+        <span class="ml-2">More projects</span>
+      </button>
+      <div id="hidden-items" class="hidden">
+        {hiddenItems.map(item => (
+          <Card
+            title={item.title}
+            url={item.url}
+            authors={parseAuthors(item.authors)}
+            date={item.date}
+            venue={item.venue}
+            description={item.description}
+            links={item.links}
+            image={item.image}
+            alt={item.alt ?? ""}
+          />
+        ))}
+      </div>
+    </div>
+  )}
+</section>
+
+<!-- Inline script to toggle hidden items -->
+<script>
+  const toggleButton = document.getElementById('toggle-hidden');
+  const hiddenContainer = document.getElementById('hidden-items');
+  const dropdownIcon = document.getElementById('dropdown-icon');
+
+  // Ensure toggleButton is not null before proceeding
+  if (toggleButton) {
+    const toggleText = toggleButton.querySelector('span');
+
+    toggleButton.addEventListener('click', () => {
+      if (!hiddenContainer || !dropdownIcon || !toggleText) return;
+
+      const isHidden = hiddenContainer.classList.contains('hidden');
+
+      if (isHidden) {
+        hiddenContainer.classList.remove('hidden');
+        dropdownIcon.classList.add('rotate-180'); // rotates the icon (Tailwind CSS)
+        toggleText.textContent = 'Less projects';
+      } else {
+        hiddenContainer.classList.add('hidden');
+        dropdownIcon.classList.remove('rotate-180');
+        toggleText.textContent = 'More projects';
+      }
+    });
+  } else {
+    console.warn("Toggle button with ID 'toggle-hidden' not found.");
+  }
+</script>

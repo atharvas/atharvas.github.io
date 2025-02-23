@@ -1,0 +1,75 @@
+---
+interface Props {
+  title: string;
+  url: string;
+  authors: string;
+  date: string;
+  venue: string;
+  description: string;
+  links: { name: string; url: string }[];
+  image: string;
+  alt: string;
+}
+
+const { title, url, authors, date, venue, description, links, image, alt } = Astro.props;
+import Link from './Link.astro';
+---
+
+<div class="flex items-stretch gap-4 pb-2 pb:last-0">
+
+  {image && (
+    <div class="hidden flex-none lg:block lg:w-[200px]">
+      <img
+        src={image}
+        alt={alt}
+        class="rounded"
+      />
+    </div>
+  )}
+
+<!-- Text content -->
+  <div class="flex-1">
+    <h2 class="text-lg font-semibold text-gray-900">
+      <Link href={url} class="hover:underline">
+        {title}
+      </Link>
+    </h2>
+    <span class="text-sm font-normal text-gray-500">
+      {venue}
+    </span>
+
+    <!-- Authors -->
+    <div class="mt-1 text-sm text-gray-600" set:html={authors}></div>
+
+    <!-- Date (optional display) -->
+    <!-- <p class="text-xs text-gray-500 mt-1">
+      {date}
+    </p> -->
+
+    <!-- Description -->
+    <p class="mt-2 text-gray-800">
+      {description}
+    </p>
+
+    <!-- Links (shown only if links exist) -->
+    {links?.length > 0 && (
+      <div class="mt-2 text-sm text-blue-600">
+        {links.map((link, idx) => (
+          <>
+            <Link href={link.url} class="hover:underline">
+              {link.name}
+            </Link>
+            {idx < links.length - 1 && ' | '}
+          </>
+        ))}
+      </div>
+    )}
+  </div>
+
+
+  <!-- <div class="flex-none w-[100px] sm:w-[150px]">
+    <img src={image} alt={alt} class="max-w-full" />
+  </div> -->
+
+
+</div>

@@ -1,0 +1,324 @@
+/*************************************************************
+ * RESET & BASE
+ *************************************************************/
+ *,
+ *::before,
+ *::after {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+ }
+ 
+ /* Use your own desired fonts. Including "Carlito" as you had, with fallback */
+ html,
+ button,
+ select,
+ textarea {
+   font-family: "Carlito", "Noto Sans Korean", Helvetica, Arial, sans-serif;
+   font-weight: 400;
+ }
+ 
+ /*************************************************************
+  * BODY & TYPOGRAPHY
+  *************************************************************/
+ body {
+   font-size: 17px;
+   line-height: 1.35;
+   color: #333;
+   text-rendering: optimizeLegibility;
+   margin: 0 auto;
+   /* if you want to limit max width for the entire page, do it here or in a wrapper */
+ }
+ 
+ ul {
+   list-style-type: none;
+ }
+ 
+ a {
+   color: #007BFF; /* default link color */
+   text-decoration: none;
+ }
+ a:hover {
+   text-decoration: underline;
+ }
+ 
+ h1, h2, h3, h4, h5, h6 {
+   margin: 0;
+ }
+ 
+ h5 { font-size: 105%; }
+ h6 { font-size: 97%; }
+ 
+ p.small,
+ li {
+   font-size: 90%;
+ }
+ 
+ p.small {
+   margin: 0.5em 0;
+ }
+ 
+ /*************************************************************
+  * HEADINGS
+  *************************************************************/
+ h3 {
+   border-bottom: 1px solid #333;
+   margin: 10px 0;
+   font-size: 110%;
+   padding-bottom: 4px;
+ }
+ 
+ h4 {
+   font-size: 106%;
+   margin: 0 0 5px 0;
+ }
+ 
+ h5,
+ h6 {
+   margin: 0 0 5px 0;
+ }
+ 
+ /*************************************************************
+  * HEADER CONTAINER
+  *************************************************************/
+ #header-container {
+   padding: 1em;
+   /* safe area insets for notched phones */
+ }
+ @supports (padding: max(0px)) {
+   #header-container {
+     padding-left: max(1em, env(safe-area-inset-left));
+     padding-right: max(1em, env(safe-area-inset-right));
+     padding-top: max(1em, env(safe-area-inset-top));
+   }
+ }
+ 
+ /*************************************************************
+  * HEADER WRAPPER (#header)
+  *************************************************************/
+ #header {
+   max-width: 50em;
+   margin: 0 auto;
+   display: flex;
+   align-items: center;
+   flex-wrap: wrap; /* changed from wrap-reverse to normal wrap */
+   border-bottom: 1px solid #333;
+   gap: 1em;
+   /* optional: gap for spacing between items in the flex container */
+ }
+ 
+ #header a {
+   text-decoration: none;
+   color: inherit; /* so it doesn’t clash if you want a “title” style */
+ }
+ 
+ #header h1 {
+   font-size: 150%;
+   line-height: 1.1;
+   margin: 1em 0 0.3em 0;
+ }
+ 
+ .header-link {
+   display: inline-block;
+   font-size: 95%;
+   margin-right: 0.5em;
+ }
+ 
+ /*************************************************************
+  * HEADER IMAGE (#header-img)
+  *************************************************************/
+ #header-img {
+   display: inline-block;
+   margin-right: 1em;
+   overflow: hidden;
+   width: 165px;
+   padding: 0;
+   vertical-align: top;
+ }
+ #header-img img {
+   max-height: 9em;
+   height: auto;
+   display: block;
+   left: -23%;
+   position: relative; 
+   /* If you want exact cropping, adjust left/top or remove position entirely */
+ }
+ 
+ /*************************************************************
+  * HEADER CONTENT (#header-content)
+  *************************************************************/
+ /* Instead of table-cell, use a flex or block approach */
+ #header-content {
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-start;
+   /* If you want the content to line up at the bottom, you could do 'justify-content: flex-end;' */
+   flex: 1; /* so it stretches if needed */
+ }
+ 
+ .header-block {
+   margin-bottom: 0.5em;
+ }
+ 
+ /*************************************************************
+  * MAIN CONTENT WRAPPER (#content)
+  *************************************************************/
+ #content {
+   padding: 1em;
+   max-width: 50em;
+   margin: 0 auto;
+ }
+ 
+ #content a {
+   text-decoration: none;
+   color: #007BFF; 
+ }
+ 
+ /* If you want headings here larger, override them again:
+ #content h3 {
+   font-size: 120%;
+ }
+ */
+ 
+ /*************************************************************
+  * SCROLLABLE SECTION (#content-scroll)
+  *************************************************************/
+ #content-scroll {
+   padding: 0.5em;
+   max-width: 50em;
+   margin: 1em auto;
+   overflow-y: scroll;
+   max-height: 140px; 
+   border: 1px solid #ccc;
+   border-radius: 4px;
+ }
+ 
+ /*************************************************************
+  * LISTS: MEMBER, INTERESTS, TEACHING, SERVICE
+  *************************************************************/
+ ul.member-list {
+   columns: 2;
+   column-rule: dotted 1px #333;
+   -webkit-columns: 2;
+   -webkit-column-rule: dotted 1px #333;
+   -moz-columns: 2;
+   -moz-column-rule: dotted 1px #333;
+   margin: 0;
+   padding: 0;
+ }
+ 
+ ul.member-list li {
+   margin-bottom: 0.5em;
+ }
+ 
+ .member-meta {
+   font-size: 80%;
+   color: #858585;
+ }
+ 
+ .member-header {
+   font-weight: 600;
+   text-decoration: underline;
+ }
+ 
+ ul.interest-list {
+   margin: 1em 0 1em 1em;
+   padding: 0;
+   list-style-type: square;
+ }
+ ul.interest-list li {
+   font-size: 90%;
+   margin: 0.4em 0;
+ }
+ 
+ ul.teaching-list {
+   margin: 0;
+   padding: 0;
+ }
+ 
+ ul.service-list {
+   columns: 2;
+   column-rule: dotted 1px #333;
+   -webkit-columns: 2;
+   -webkit-column-rule: dotted 1px #333;
+   -moz-columns: 2;
+   -moz-column-rule: dotted 1px #333;
+   margin: 0;
+   padding: 0;
+ }
+ 
+ /*************************************************************
+  * PUBLICATIONS
+  *************************************************************/
+ ul.pub-list {
+   margin: 0;
+   padding: 0;
+ }
+ 
+ ul.pub-list li {
+   margin-bottom: 0.5em;
+ }
+ 
+ .pub-header {
+   font-weight: 600;
+   text-decoration: underline;
+ }
+ 
+ .pub-title {
+   font-size: 16px;
+ }
+ 
+ .pub-authors,
+ .paper-extra,
+ .paper-links {
+   font-size: 14px;
+ }
+ 
+ /*************************************************************
+  * FOOTER
+  *************************************************************/
+ footer {
+   width: 100%;
+   padding: 0.5em;
+   text-align: center;
+   background: #f9f9f9;
+   color: #666;
+   margin-top: 2em;
+   font-size: 90%;
+ }
+ 
+ /*************************************************************
+  * OPTIONAL BLOG/ARTICLE LISTING
+  *************************************************************/
+ .article {
+   display: flex;
+   justify-content: space-between;
+   border-bottom: 1px solid #ccc;
+   padding: 10px 0;
+ }
+ .date {
+   width: 30%;
+   color: #888;
+   text-align: left;
+ }
+ .title {
+   width: 70%;
+   text-align: left;
+ }
+ .title a {
+   color: #007BFF;
+ }
+ .title a:hover {
+   text-decoration: underline;
+ }
+ 
+ /*************************************************************
+  * OPTIONAL: CODE BLOCKS, ETC.
+  *************************************************************/
+ pre, 
+ code {
+   font-family: Menlo, Consolas, "Courier New", monospace;
+   font-size: 85%;
+   line-height: 1.4;
+ }
+ 

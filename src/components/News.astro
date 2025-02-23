@@ -1,0 +1,112 @@
+---
+import Link from './Link.astro';
+import NewsCard from './NewsCard.astro'; // import the reusable component
+
+interface NewsItem {
+  hide: boolean;
+  date: string;
+  news: string;
+  links: { name: string; url: string }[];
+}
+
+interface Props {
+  items: NewsItem[];
+}
+
+const { items } = Astro.props;
+
+// Sort by date in descending order
+items.sort((a, b) => {
+  const dateA = new Date(a.date);
+  const dateB = new Date(b.date);
+  return dateB.getTime() - dateA.getTime();
+});
+// rewrite the date from December 2025 to Dec 2025
+items.forEach((item) => {
+  const date = new Date(item.date);
+  const month = date.toLocaleString('default', { month: 'short' });
+  const year = date.getFullYear();
+  item.date = `${month} ${year}`;
+});
+
+const visibleItems = items.slice(0, 2);
+const hiddenItems = items.slice(2);
+---
+
+<section class="mt-20 mb-10">
+  <h1 class="mb-5 font-bold text-3xl">News</h1>
+
+  {/*
+    1) Wrap all visible items in a single grid
+    so they share the same left-column width.
+  */}
+  <div class="grid grid-cols-[max-content_1fr] gap-4 items-start">
+    {visibleItems.map((item) => (
+      <NewsCard item={item} />
+    ))}
+  </div>
+
+  {hiddenItems.length > 0 && (
+    <div class="mt-4">
+      <button 
+        id="toggle-hidden-news" 
+        class="flex items-center focus:outline-none"
+      >
+        <svg
+          id="dropdown-icon-news"
+          class="w-6 h-6 transform transition-transform duration-200"
+          xmlns="http://www.w3.org/2000/svg" 
+          fill="none"
+          viewBox="0 0 24 24" 
+          stroke="currentColor"
+        >
+          <path 
+            stroke-linecap="round" 
+            stroke-linejoin="round" 
+            stroke-width="2" 
+            d="M19 9l-7 7-7-7" 
+          />
+        </svg>
+        <span class="ml-2">More news</span>
+      </button>
+
+      {/*
+        2) Same grid for hidden items, but initially hidden.
+      */}
+      <div id="hidden-items-news" class="hidden mt-4">
+        <div class="grid grid-cols-[max-content_1fr] gap-4 items-start">
+          {hiddenItems.map((item) => (
+            <NewsCard item={item} />
+          ))}
+        </div>
+      </div>
+    </div>
+  )}
+</section>
+
+<script>
+  // Toggle logic for showing/hiding extra items
+  const toggleButton = document.getElementById('toggle-hidden-news');
+  const hiddenContainer = document.getElementById('hidden-items-news');
+  const dropdownIcon = document.getElementById('dropdown-icon-news');
+
+  if (toggleButton) {
+    const toggleText = toggleButton.querySelector('span');
+
+    toggleButton.addEventListener('click', () => {
+      if (!hiddenContainer || !dropdownIcon || !toggleText) return;
+
+      const isHidden = hiddenContainer.classList.contains('hidden');
+
+      if (isHidden) {
+        hiddenContainer.classList.remove('hidden');
+        dropdownIcon.classList.add('rotate-180');
+        toggleText.textContent = 'Less news';
+      } else {
+        hiddenContainer.classList.add('hidden');
+        dropdownIcon.classList.remove('rotate-180');
+        toggleText.textContent = 'More news';
+      }
+    });
+  }
+</script>
