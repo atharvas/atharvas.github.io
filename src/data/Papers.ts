@@ -26,8 +26,8 @@ export const PaperItems = [
     // a novel, scalable program synthesis strategy based on library learning that enabled scientists to accelerate
     // the search for novel equations with natural language concepts.`,
     description: "",
-    image: "/static/lasr-teaser.svg",
-    alt: "LaSR teaser",
+    // image: "/static/lasr-teaser.svg",
+    // alt: "LaSR teaser",
     links : [
       {
         name: "Paper",
@@ -52,8 +52,8 @@ export const PaperItems = [
     venue: "ICLR 2024",
     // description: "Cosmos studies a new form of compositional generalization and uses vision-language foundation models to learn world models from unsupervised environment interactions.",
     description: "",
-    image: "/static/cosmos-teaser.svg",
-    alt: "COSMOS teaser",
+    // image: "/static/cosmos-teaser.svg",
+    // alt: "COSMOS teaser",
     links : [
       {
         name: "Paper",
@@ -74,8 +74,8 @@ export const PaperItems = [
     date: "December 2022",
     venue: "NeurIPS 2022 (AI4Science Workshop)",
     description: "",
-    image: "/static/neurosymscience-teaser.svg",
-    alt: "",
+    // image: "/static/neurosymscience-teaser.svg",
+    // alt: "",
     links : [
       {
         name: "Paper",
