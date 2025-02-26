@@ -41,6 +41,10 @@ export const PaperItems = [
         name: "Blog",
         url: "https://trishullab.github.io/lasr-web/",
       },
+      {
+        name: "Poster",
+        url: "static/neurips24_poster.pdf",
+      }
     ]
   },
   {
@@ -62,6 +66,10 @@ export const PaperItems = [
       {
         name: "Blog",
         url: "https://trishullab.github.io/cosmos-web/",
+      },
+      {
+        name: "Poster",
+        url: "static/iclr24_poster.pdf",
       }
     ]
   },
@@ -69,7 +77,7 @@ export const PaperItems = [
   {
     hide: false,
     title: "Neurosymbolic Programming for Science",
-    url: "",
+    url: "https://arxiv.org/abs/2210.05050",
     authors: "Jennifer J. Sun*, Megan Tjandrasuwita*, _Atharva Sehgal_*, Armando Solar-Lezama, Swarat Chaudhuri, Yisong Yue, Omar Costilla-Reyes",
     date: "December 2022",
     venue: "NeurIPS 2022 (AI4Science Workshop)",
@@ -80,6 +88,10 @@ export const PaperItems = [
       {
         name: "Paper",
         url: "https://arxiv.org/abs/2210.05050",
+      },
+      {
+        name: "Poster",
+        "url": "/static/ai4science_poster.pdf",
       }
     ]
   },
