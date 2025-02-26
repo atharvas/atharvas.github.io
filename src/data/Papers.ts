@@ -1,6 +1,21 @@
 export const PaperItems = [
   {
     hide: false,
+    title: "Escher: Self-Evolving Visual Concept Library using Vision-Language Critics",
+    url: "",
+    authors: "_Atharva Sehgal_, Patrick Yuan, Ziniu Hu, Yisong Yue, Jennifer J. Sun, Swarat Chaudhuri",
+    date: "June 2025",
+    venue: "CVPR 2025",
+    description: "",
+    links: [
+      {
+        name: "Coming soon!",
+        url: "https://example.com",
+      }
+    ]
+  },
+  {
+    hide: false,
     title: "LaSR: Symbolic Regression with a Learned Concept Library",
     url: "https://trishullab.github.io/lasr-web/",
     authors: "Arya Grayeli*, _Atharva Sehgal_*, Omar Costilla-Reyes, Miles Cranmer, Swarat Chaudhuri",

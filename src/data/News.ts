@@ -1,5 +1,11 @@
 export const NewsItems = [
     {
+        data: "Febuary 2025",
+        news: "Escher is accepted to CVPR'25! (AR: 22.1%). I'll be releasing more info (and a website) soon.",
+        links: [],
+        hide: false,
+    },
+    {
         date: "January 2025",
         news: "I'll be talking about Program Synthesis & Scientific Discovery at the Collaborative Discovery Lab @ Cornell and Vision Lab @ Caltech.",
         links: [
