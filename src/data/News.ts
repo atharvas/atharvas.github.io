@@ -1,6 +1,6 @@
 export const NewsItems = [
     {
-        data: "Febuary 2025",
+        data: "February 2025",
         news: "Escher is accepted to CVPR'25! (AR: 22.1%). I'll be releasing more info (and a website) soon.",
         links: [],
         hide: false,
