@@ -43,7 +43,7 @@ export const PaperItems = [
       },
       {
         name: "Poster",
-        url: "static/neurips24_poster.pdf",
+        url: "/static/neurips24_poster.pdf",
       }
     ]
   },
@@ -69,7 +69,7 @@ export const PaperItems = [
       },
       {
         name: "Poster",
-        url: "static/iclr24_poster.pdf",
+        url: "/static/iclr24_poster.pdf",
       }
     ]
   },

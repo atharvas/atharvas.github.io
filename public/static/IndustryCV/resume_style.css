@@ -115,7 +115,15 @@ strong {
 }
 
 .right-division {
-    margin-left: 35%;
+    margin-left: 32%;
+}
+
+.outreach-section .left-division {
+    width: 20%;
+    float: left;
+}
+.outreach-section .right-division {
+    margin-left: 20%;
 }
 
 .clear-division {
