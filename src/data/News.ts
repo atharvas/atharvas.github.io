@@ -1,6 +1,6 @@
 export const NewsItems = [
     {
-        data: "February 2025",
+        date: "February 2025",
         news: "Escher is accepted to CVPR'25! (AR: 22.1%). I'll be releasing more info (and a website) soon.",
         links: [],
         hide: false,
@@ -35,6 +35,17 @@ export const NewsItems = [
     {
         date: "December 2024",
         news: "I'll be at NeurIPS'24 presenting our poster on LaSR!",
+        links: [
+            {
+                name: "Link",
+                url: "https://trishullab.github.io/lasr-web/",
+            }
+        ],
+        hide: false,
+    },
+    {
+        date: "September 2024",
+        news: "LaSR is accepted to NeurIPS'24! (AR: 25.8%)!",
         links: [
             {
                 name: "Link",
