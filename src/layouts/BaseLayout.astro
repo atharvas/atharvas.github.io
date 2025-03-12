@@ -1,3 +1,8 @@
+---
+import Link from "../components/Link.astro";
+
+---
+
 <!doctype html>
 <html lang="en" class="bg-slate-50 min-w-[300px]">
   <head>
@@ -13,6 +18,10 @@
         <slot />
       </div>
     </div>
+    <!-- add a footer with a copyright note -->
+    <footer class="text-center text-gray-500 text-sm py-4">
+      <p>Built with <Link href="https://astro.build/">Astro</Link>. Feel free to copy this style! <Link href="https://github.com/atharvas/atharvas.github.io">Code here</Link></p>
+    </footer>
   </body>
   <style is:global>
     /* Declare a custom CSS class to make the icon look right */
