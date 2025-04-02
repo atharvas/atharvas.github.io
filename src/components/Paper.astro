@@ -1,7 +1,9 @@
 ---
+/* Paper.astro */
 import Card from './Card.astro';
 import Link from './Link.astro';
 
+/* Data interfaces for your content: */
 interface PaperItem {
   hide: boolean;
   title: string;
@@ -15,49 +17,75 @@ interface PaperItem {
   alt?: string;
 }
 
-interface Props {
-  items: PaperItem[];
+/* A simple key-value object for author names → website URLs: */
+interface BioLinks {
+  [authorName: string]: string;
 }
 
-// Astro will provide the props you pass into this component in `Astro.props`:
-const { items } = Astro.props;
+/* Props for this component will now include BioLinks as well: */
+interface Props {
+  items: PaperItem[];
+  BioLinks: BioLinks;
+}
+
+const { items, BioLinks } = Astro.props;
 
 /**
  * parseAuthors(authors: string)
  * 
  * Splits a string of comma-separated authors, trims each name,
- * converts trailing '*' into a superscript, and underscores into bold.
+ * converts trailing '*' into a superscript, underscores into bold,
+ * and wraps the author in a link if their name is found in BioLinks.
  */
 function parseAuthors(authors: string): string {
-  let authorsList = authors
-    .split(',')
-    .map((author) => author.trim());
+  let authorsList = authors.split(',').map((author) => author.trim());
 
-  // Replace _author_ with a bold span and *author* with a superscript
   authorsList = authorsList.map((author) => {
+    // For link lookups, remove the markup from the author's name:
+    const strippedName = author
+      .replace(/_(.*?)_/g, '$1')   // remove underscores
+      .replace(/\*(.*?)\*/g, '$1') // remove asterisks
+      .replace(/(.*?)\*/g, '$1') // remove asterisks
+      .trim();
+
+    // Perform the existing bold/superscript replacements
+    let displayAuthor = author;
     const boldRegex = /_(.*?)_/g;
     const superscriptRegex = /\*(.*?)\*/g;
 
-    let boldMatch = boldRegex.exec(author);
-    let superscriptMatch = superscriptRegex.exec(author);
-
+    let boldMatch = boldRegex.exec(displayAuthor);
     while (boldMatch) {
-      author = author.replace(boldMatch[0], `<span class="font-bold">${boldMatch[1]}</span>`);
-      boldMatch = boldRegex.exec(author);
+      displayAuthor = displayAuthor.replace(
+        boldMatch[0],
+        `<span class="font-bold">${boldMatch[1]}</span>`
+      );
+      boldMatch = boldRegex.exec(displayAuthor);
     }
 
+    let superscriptMatch = superscriptRegex.exec(displayAuthor);
     while (superscriptMatch) {
-      author = author.replace(superscriptMatch[0], `<sup>${superscriptMatch[1]}</sup>`);
-      superscriptMatch = superscriptRegex.exec(author);
+      displayAuthor = displayAuthor.replace(
+        superscriptMatch[0],
+        `<sup>${superscriptMatch[1]}</sup>`
+      );
+      superscriptMatch = superscriptRegex.exec(displayAuthor);
     }
 
-    return author;
+    // If the stripped name is in BioLinks, wrap with <a>
+    if (BioLinks[strippedName]) {
+      const link = BioLinks[strippedName];
+      return `<a href="${link}" target="_blank" rel="noopener noreferrer">${displayAuthor}</a>`;
+    } else {
+      // No link found, just return the display text
+      return displayAuthor;
+    }
   });
 
+  // Join them all back with commas
   return authorsList.join(', ');
 }
 
-// Separate the items into visible and hidden groups
+// Separate the items into visible and hidden for the “More projects” toggle
 const visibleItems = items.filter(item => !item.hide);
 const hiddenItems = items.filter(item => item.hide);
 ---
@@ -66,7 +94,7 @@ const hiddenItems = items.filter(item => item.hide);
   <div class="mb-5">
     <h1 class="font-bold text-3xl">Research projects</h1>
     <p class="leading-8 text-gray-600">
-      For a complete list, consult 
+      For a complete list, consult
       <Link href="https://scholar.google.com/citations?user=dj1yDdIAAAAJ&hl=en">Google Scholar</Link>
     </p>
     <p class="leading-8 text-gray-600">* denotes equal contribution</p>
@@ -91,8 +119,11 @@ const hiddenItems = items.filter(item => item.hide);
   {hiddenItems.length > 0 && (
     <div>
       <button id="toggle-hidden" class="flex items-center mt-2 focus:outline-none">
-        <svg id="dropdown-icon" class="w-6 h-6 transform transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        <svg id="dropdown-icon" class="w-6 h-6 transform transition-transform duration-200"
+             xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+             stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M19 9l-7 7-7-7" />
         </svg>
         <span class="ml-2">More projects</span>
       </button>
@@ -115,24 +146,20 @@ const hiddenItems = items.filter(item => item.hide);
   )}
 </section>
 
-<!-- Inline script to toggle hidden items -->
 <script>
   const toggleButton = document.getElementById('toggle-hidden');
   const hiddenContainer = document.getElementById('hidden-items');
   const dropdownIcon = document.getElementById('dropdown-icon');
 
-  // Ensure toggleButton is not null before proceeding
   if (toggleButton) {
     const toggleText = toggleButton.querySelector('span');
-
     toggleButton.addEventListener('click', () => {
       if (!hiddenContainer || !dropdownIcon || !toggleText) return;
-
       const isHidden = hiddenContainer.classList.contains('hidden');
 
       if (isHidden) {
         hiddenContainer.classList.remove('hidden');
-        dropdownIcon.classList.add('rotate-180'); // rotates the icon (Tailwind CSS)
+        dropdownIcon.classList.add('rotate-180');
         toggleText.textContent = 'Less projects';
       } else {
         hiddenContainer.classList.add('hidden');

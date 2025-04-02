@@ -5,6 +5,7 @@ import Paper from "../components/Paper.astro";
 import News from "../components/News.astro";
 import { PaperItems } from "../data/Papers";
 import { NewsItems } from "../data/News.ts";
+import { BioLinks } from "../data/BioLinks.ts";
 
 // Font Awesome setup
 import { library, icon } from "@fortawesome/fontawesome-svg-core";
@@ -27,7 +28,7 @@ const googleScholarIcon = icon({
 // An icon for Resume
 const resumeIcon = icon({ prefix: "fas", iconName: "file-alt" });
 
-const ResumeLink = "/static/IndustryCV/index.html";
+const ResumeLink = "/cv";
 // const ResumeLink = "/static/Academic_CV.pdf";
 ---
 
@@ -135,7 +136,7 @@ const ResumeLink = "/static/IndustryCV/index.html";
        <News items={NewsItems} />
 
       <!-- Papers Section -->
-      <Paper items={PaperItems} />
+      <Paper items={PaperItems} BioLinks={BioLinks} />
     </div>
   </div>
 </BaseLayout>

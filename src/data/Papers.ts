@@ -2,15 +2,32 @@ export const PaperItems = [
   {
     hide: false,
     title: "Escher: Self-Evolving Visual Concept Library using Vision-Language Critics",
-    url: "",
+    url: "https://trishullab.github.io/escher-web/",
     authors: "_Atharva Sehgal_, Patrick Yuan, Ziniu Hu, Yisong Yue, Jennifer J. Sun, Swarat Chaudhuri",
     date: "June 2025",
     venue: "CVPR 2025",
+    // description: `LaSR discovers interpretable mathematical equations from raw experimental data. We proposed
+    // a novel, scalable program synthesis strategy based on library learning that enabled scientists to accelerate
+    // the search for novel equations with natural language concepts.`,
     description: "",
-    links: [
+    // image: "/static/lasr-teaser.svg",
+    // alt: "LaSR teaser",
+    links : [
       {
-        name: "Coming soon!",
-        url: "https://example.com",
+        name: "Paper",
+        url: "https://arxiv.org/abs/2504.00185",
+      },
+      {
+        name: "Code",
+        url: "https://github.com/trishullab/escher",
+      },
+      {
+        name: "Blog",
+        url: "https://trishullab.github.io/escher-web/",
+      },
+      {
+        name: "Poster",
+        url: "https://example.com/",
       }
     ]
   },

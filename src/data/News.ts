@@ -1,8 +1,13 @@
 export const NewsItems = [
     {
         date: "February 2025",
-        news: "Escher is accepted to CVPR'25! (AR: 22.1%). I'll be releasing more info (and a website) soon.",
-        links: [],
+        news: "Escher is accepted to CVPR'25! (AR: 22.1%).",
+        links: [
+            {
+                name: "Link",
+                url: "https://trishullab.github.io/escher-web/",
+            }
+        ],
         hide: false,
     },
     {

@@ -1,8 +1,9 @@
 ---
+/* Card.astro */
 interface Props {
   title: string;
   url: string;
-  authors: string;
+  authors: string; /* Final HTML string with or without links */
   date: string;
   venue: string;
   description: string;
@@ -16,7 +17,6 @@ import Link from './Link.astro';
 ---
 
 <div class="flex items-stretch gap-4 pb-2 pb:last-0">
-
   {image && (
     <div class="hidden flex-none lg:block lg:w-[200px]">
       <img
@@ -27,7 +27,6 @@ import Link from './Link.astro';
     </div>
   )}
 
-<!-- Text content -->
   <div class="flex-1">
     <h2 class="text-lg font-semibold text-gray-900">
       <Link href={url} class="hover:underline">
@@ -38,20 +37,22 @@ import Link from './Link.astro';
       {venue}
     </span>
 
-    <!-- Authors -->
+    <!--
+      Because authors is passed as an HTML string (possibly containing <a>),
+      we use set:html={} here to inject that raw HTML.
+    -->
     <div class="mt-1 text-sm text-gray-600" set:html={authors}></div>
 
-    <!-- Date (optional display) -->
-    <!-- <p class="text-xs text-gray-500 mt-1">
+    <!-- Date (commented out, but left here if you need it)
+    <p class="text-xs text-gray-500 mt-1">
       {date}
-    </p> -->
+    </p>
+    -->
 
-    <!-- Description -->
     <p class="mt-2 text-gray-800">
       {description}
     </p>
 
-    <!-- Links (shown only if links exist) -->
     {links?.length > 0 && (
       <div class="mt-2 text-sm text-blue-600">
         {links.map((link, idx) => (
@@ -65,11 +66,4 @@ import Link from './Link.astro';
       </div>
     )}
   </div>
-
-
-  <!-- <div class="flex-none w-[100px] sm:w-[150px]">
-    <img src={image} alt={alt} class="max-w-full" />
-  </div> -->
-
-
 </div>

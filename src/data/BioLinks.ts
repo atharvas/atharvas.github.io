@@ -1,0 +1,21 @@
+export const BioLinks = {
+    "Atharva Sehgal": "https://atharvas.net/",
+    "Adithya Murali": "https://muraliadithya.github.io/",
+    "Paul Krogmeier": "https://paulkrog.github.io/",
+    "Madhusudan Parthasarathy": "https://madhu.cs.illinois.edu/",
+    "Shubham Ugare": "https://shubhamugare.github.io/",
+    "Jacob Laurel": "https://jsl1994.github.io/",
+    "Rem Yang": "https://remyang55.github.io/",
+    "Sasa Misailovic": "https://misailo.cs.illinois.edu/",
+    "Jennifer J. Sun": "https://jenjsun.com/",
+    "Megan Tjandrasuwita": "https://megantj.github.io/",
+    "Armando Solar-Lezama": "https://people.csail.mit.edu/asolar/",
+    "Swarat Chaudhuri": "https://www.cs.utexas.edu/~swarat/",
+    "Yisong Yue": "https://www.cms.caltech.edu/people/yyue/",
+    "Omar Costilla-Reyes": "https://omarcr.github.io/",
+    "Arya Grayeli": "https://www.linkedin.com/in/aryagrayeli/",
+    "Miles Cranmer": "https://astroautomata.com/",
+    "Patrick Yuan": "https://www.linkedin.com/in/py95/",
+    "Ziniu Hu": "https://acbull.github.io/",
+}
+
