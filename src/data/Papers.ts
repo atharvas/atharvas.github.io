@@ -2,11 +2,25 @@ export const PaperItems = [
   {
     hide: false,
     title: "Beyond Accuracy: Metrics that Uncover What Makes a 'Good' Visual Descriptor",
-    url: "https://openreview.net/pdf/d4e4323197ac1c3472b6f953f0550ef72842938b.pdf",
+    url: "https://ethan-y-lin.github.io/beyond-accuracy-project-page/",
     authors: "Ethan Lin, Linxi Zhao, _Atharva Sehgal_, Jennifer J. Sun",
     date: "June 2025",
     venue: "CVPR 2025 (Visual Concepts Workshop) | _Best Poster Award_",
     description: "",
+    links : [
+      {
+        name: "Paper",
+        url: "https://openreview.net/pdf/d4e4323197ac1c3472b6f953f0550ef72842938b.pdf",
+      },
+      {
+        name: "Code",
+        url: "https://github.com/ethan-y-lin/beyond_accuracy",
+      },
+      {
+        name: "Blog",
+        url: "https://ethan-y-lin.github.io/beyond-accuracy-project-page/",
+      },
+    ]
   },
   {
     hide: false,
@@ -36,7 +50,7 @@ export const PaperItems = [
       },
       {
         name: "Poster",
-        url: "https://example.com/",
+        url: "/static/cvpr25-escher-poster.pdf"
       }
     ]
   },
