@@ -85,6 +85,49 @@ function parseAuthors(authors: string): string {
   return authorsList.join(', ');
 }
 
+function parseVenue(venue: string): string {
+  // Reuse the logic from the parseAuthors function
+  // to implement the same bold/superscript replacements
+  // Venue information is split using | instead of ,
+  let venueList = venue.split('|').map((venue) => venue.trim());
+
+  venueList = venueList.map((venue) => {
+    // For link lookups, remove the markup from the author's name:
+    const strippedName = venue
+      .replace(/_(.*?)_/g, '$1')   // remove underscores
+      .replace(/\*(.*?)\*/g, '$1') // remove asterisks
+      .replace(/(.*?)\*/g, '$1') // remove asterisks
+      .trim();
+
+    // Perform the existing bold/superscript replacements
+    let displayVenue = venue;
+    const boldRegex = /_(.*?)_/g;
+    const superscriptRegex = /\*(.*?)\*/g;
+
+    let boldMatch = boldRegex.exec(displayVenue);
+    while (boldMatch) {
+      displayVenue = displayVenue.replace(
+        boldMatch[0],
+        `<span class="font-bold">${boldMatch[1]}</span>`
+      );
+      boldMatch = boldRegex.exec(displayVenue);
+    }
+
+    let superscriptMatch = superscriptRegex.exec(displayVenue);
+    while (superscriptMatch) {
+      displayVenue = displayVenue.replace(
+        superscriptMatch[0],
+        `<sup>${superscriptMatch[1]}</sup>`
+      );
+      superscriptMatch = superscriptRegex.exec(displayVenue);
+    }
+
+    return displayVenue;
+  });
+
+  return venueList.join(' | ');
+}
+
 // Separate the items into visible and hidden for the “More projects” toggle
 const visibleItems = items.filter(item => !item.hide);
 const hiddenItems = items.filter(item => item.hide);
@@ -107,7 +150,7 @@ const hiddenItems = items.filter(item => item.hide);
       url={item.url}
       authors={parseAuthors(item.authors)}
       date={item.date}
-      venue={item.venue}
+      venue={parseVenue(item.venue)}
       description={item.description}
       links={item.links}
       image={item.image}
@@ -134,7 +177,7 @@ const hiddenItems = items.filter(item => item.hide);
             url={item.url}
             authors={parseAuthors(item.authors)}
             date={item.date}
-            venue={item.venue}
+            venue={parseVenue(item.venue)}
             description={item.description}
             links={item.links}
             image={item.image}

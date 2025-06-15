@@ -33,9 +33,8 @@ import Link from './Link.astro';
         {title}
       </Link>
     </h2>
-    <span class="text-sm font-normal text-gray-500">
-      {venue}
-    </span>
+    <!-- Use set-html for the venue as well -->
+    <span class="text-sm font-normal text-gray-500" set:html={venue}></span>
 
     <!--
       Because authors is passed as an HTML string (possibly containing <a>),

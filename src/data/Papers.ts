@@ -1,6 +1,15 @@
 export const PaperItems = [
   {
     hide: false,
+    title: "Beyond Accuracy: Metrics that Uncover What Makes a 'Good' Visual Descriptor",
+    url: "https://openreview.net/pdf/d4e4323197ac1c3472b6f953f0550ef72842938b.pdf",
+    authors: "Ethan Lin, Linxi Zhao, _Atharva Sehgal_, Jennifer J. Sun",
+    date: "June 2025",
+    venue: "CVPR 2025 (Visual Concepts Workshop) | _Best Poster Award_",
+    description: "",
+  },
+  {
+    hide: false,
     title: "Escher: Self-Evolving Visual Concept Library using Vision-Language Critics",
     url: "https://trishullab.github.io/escher-web/",
     authors: "_Atharva Sehgal_, Patrick Yuan, Ziniu Hu, Yisong Yue, Jennifer J. Sun, Swarat Chaudhuri",

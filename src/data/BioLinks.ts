@@ -17,5 +17,7 @@ export const BioLinks = {
     "Miles Cranmer": "https://astroautomata.com/",
     "Patrick Yuan": "https://www.linkedin.com/in/py95/",
     "Ziniu Hu": "https://acbull.github.io/",
+    "Ethan Lin": "https://ethan-y-lin.github.io/",
+    "Linxi Zhao": "https://linxi-zhao.github.io/",
 }
 
