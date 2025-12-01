@@ -1,5 +1,10 @@
 export const NewsItems = [
     {
+        date: "November 2025",
+        news: "I'll be at NeurIPS in San Diego!",
+        hide: false,
+    },
+    {
         date: "February 2025",
         news: "Escher is accepted to CVPR'25! (AR: 22.1%).",
         links: [
