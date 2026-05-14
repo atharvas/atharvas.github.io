@@ -1,6 +1,51 @@
 export const PaperItems = [
   {
     hide: false,
+    title: "Programmatic Context Augmentation for LLM-based Symbolic Regression",
+    url: "https://arxiv.org/abs/2605.03101",
+    authors: "Hao Liu, Xiao-Wen Yang, _Atharva Sehgal_, Yixin Wang, Lan-Zhe Guo, Yu-Feng Li, Yisong Yue",
+    date: "May 2026",
+    venue: "Preprint",
+    description: "",
+    links: [
+      {
+        name: "Paper",
+        url: "https://arxiv.org/abs/2605.03101",
+      },
+    ],
+  },
+  {
+    hide: false,
+    title: "FormulaCode: Evaluating Agentic Optimization on Large Codebases",
+    url: "https://arxiv.org/abs/2603.16011",
+    authors: "_Atharva Sehgal_, James Hou, Akanksha Sarkar, Ishaan Mantripragada, Swarat Chaudhuri, Jennifer J. Sun, Yisong Yue",
+    date: "March 2026",
+    venue: "ICML 2026",
+    description: "",
+    links: [
+      {
+        name: "Paper",
+        url: "https://arxiv.org/abs/2603.16011",
+      },
+    ],
+  },
+  {
+    hide: false,
+    title: "Simple Agents Outperform Experts in Biomedical Imaging Workflow Optimization",
+    url: "https://arxiv.org/abs/2512.06006",
+    authors: "Xuefei (Julie) Wang, Kai A. Horstmann, Ethan Lin, Jonathan Chen, Alexander R. Farhang, Sophia Stiles, _Atharva Sehgal_, Jonathan Light, David Van Valen, Yisong Yue, Jennifer J. Sun",
+    date: "June 2026",
+    venue: "CVPR 2026",
+    description: "",
+    links: [
+      {
+        name: "Paper",
+        url: "https://arxiv.org/abs/2512.06006",
+      },
+    ],
+  },
+  {
+    hide: false,
     title: "Beyond Accuracy: Metrics that Uncover What Makes a 'Good' Visual Descriptor",
     url: "https://ethan-y-lin.github.io/beyond-accuracy-project-page/",
     authors: "Ethan Lin, Linxi Zhao, _Atharva Sehgal_, Jennifer J. Sun",
