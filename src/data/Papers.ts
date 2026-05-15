@@ -17,8 +17,8 @@ export const PaperItems = [
   {
     hide: false,
     title: "FormulaCode: Evaluating Agentic Optimization on Large Codebases",
-    url: "https://arxiv.org/abs/2603.16011",
-    authors: "_Atharva Sehgal_, James Hou, Akanksha Sarkar, Ishaan Mantripragada, Swarat Chaudhuri, Jennifer J. Sun, Yisong Yue",
+    url: "https://formula-code.github.io/",
+    authors: "_Atharva Sehgal_*, James Hou*, Akanksha Sarkar, Ishaan Mantripragada, Swarat Chaudhuri, Jennifer J. Sun, Yisong Yue",
     date: "March 2026",
     venue: "ICML 2026",
     description: "",
@@ -26,6 +26,22 @@ export const PaperItems = [
       {
         name: "Paper",
         url: "https://arxiv.org/abs/2603.16011",
+      },
+      {
+        name: "Code",
+        url: "https://github.com/formula-code",
+      },
+      {
+        name: "Blog",
+        url: "https://formula-code.github.io/",
+      },
+      {
+        name: "Dataset",
+        url: "https://huggingface.co/datasets/formulacode/formulacode-all",
+      },
+      {
+        name: "Leaderboard",
+        url: "https://formula-code.github.io/leaderboard/",
       },
     ],
   },
