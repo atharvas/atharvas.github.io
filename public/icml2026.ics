@@ -1,0 +1,52 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ICML 2026 Presentations//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Atharva Sehgal - ICML 2026 Presentations
+BEGIN:VTIMEZONE
+TZID:Asia/Seoul
+BEGIN:STANDARD
+DTSTART:19700101T000000
+TZOFFSETFROM:+0900
+TZOFFSETTO:+0900
+TZNAME:KST
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:formulacode-icml2026@atharva
+DTSTAMP:20260707T000000Z
+DTSTART;TZID=Asia/Seoul:20260707T140000
+DTEND;TZID=Asia/Seoul:20260707T160000
+SUMMARY:FormulaCode (Poster) - ICML 2026
+LOCATION:Hall A #2201, COEX Convention Center, Seoul, South Korea
+ORGANIZER;CN=Atharva Sehgal:mailto:atharvas@caltech.edu
+CONTACT:Atharva Sehgal\, atharvas@caltech.edu
+DESCRIPTION:FormulaCode poster presentation at ICML 2026.\nPresenter: Atharva Sehgal (atharvas@caltech.edu)\nhttps://icml.cc/virtual/2026/poster/63544
+URL:https://icml.cc/virtual/2026/poster/63544
+END:VEVENT
+BEGIN:VEVENT
+UID:pww-bench-icml2026@atharva
+DTSTAMP:20260707T000000Z
+DTSTART;TZID=Asia/Seoul:20260711T110000
+DTEND;TZID=Asia/Seoul:20260711T130000
+SUMMARY:PWW-Bench - ICML 2026
+LOCATION:Hall D1, COEX Convention Center, Seoul, South Korea
+ORGANIZER;CN=Atharva Sehgal:mailto:atharvas@caltech.edu
+CONTACT:Atharva Sehgal\, atharvas@caltech.edu
+DESCRIPTION:PWW-Bench presentation (w/ Sabrina Reguyal) at ICML 2026. Benchmark evaluating VLMs' mathematical problem solving skills.\nPresenter: Atharva Sehgal (atharvas@caltech.edu)\nhttps://icml.cc/virtual/2026/82436
+URL:https://icml.cc/virtual/2026/82436
+END:VEVENT
+BEGIN:VEVENT
+UID:vendi-evolve-icml2026@atharva
+DTSTAMP:20260707T000000Z
+DTSTART;TZID=Asia/Seoul:20260711T154500
+DTEND;TZID=Asia/Seoul:20260711T174500
+SUMMARY:Vendi-Evolve - ICML 2026
+LOCATION:Room 401, COEX Convention Center, Seoul, South Korea
+ORGANIZER;CN=Atharva Sehgal:mailto:atharvas@caltech.edu
+CONTACT:Atharva Sehgal\, atharvas@caltech.edu
+DESCRIPTION:Vendi-Evolve presentation at ICML 2026. AlphaEvolve extension exploring an information-theoretic diversity measure to improve exploration diversity.\nPresenter: Atharva Sehgal (atharvas@caltech.edu)\nhttps://icml.cc/virtual/2026/68548
+URL:https://icml.cc/virtual/2026/68548
+END:VEVENT
+END:VCALENDAR

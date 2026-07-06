@@ -1,0 +1,310 @@
+---
+import Link from "../components/Link.astro";
+
+// Font Awesome setup
+import { library, icon } from "@fortawesome/fontawesome-svg-core";
+import { faTwitter } from "@fortawesome/free-brands-svg-icons";
+import {
+  faCalendarPlus,
+  faCalendarCheck,
+  faLocationDot,
+  faClock,
+  faArrowUpRightFromSquare,
+} from "@fortawesome/free-solid-svg-icons";
+
+library.add(
+  faTwitter,
+  faCalendarPlus,
+  faCalendarCheck,
+  faLocationDot,
+  faClock,
+  faArrowUpRightFromSquare,
+);
+
+const twitterIcon = icon({ prefix: "fab", iconName: faTwitter.iconName });
+const calPlusIcon = icon({ prefix: "fas", iconName: "calendar-plus" });
+const calCheckIcon = icon({ prefix: "fas", iconName: "calendar-check" });
+const pinIcon = icon({ prefix: "fas", iconName: "location-dot" });
+const clockIcon = icon({ prefix: "fas", iconName: "clock" });
+const extLinkIcon = icon({ prefix: "fas", iconName: "arrow-up-right-from-square" });
+
+const bookingLink = "https://calendar.app.google/Ws8qzdpLRRhSc3Nn7";
+const twitterLink = "https://x.com/atharva_sehgal/";
+
+// Build a Google Calendar "add event" URL.
+const gcal = (text: string, start: string, end: string, location: string, details: string) =>
+  "https://calendar.google.com/calendar/render?action=TEMPLATE" +
+  `&text=${encodeURIComponent(text)}` +
+  `&dates=${start}/${end}` +
+  "&ctz=Asia/Seoul" +
+  `&location=${encodeURIComponent(location)}` +
+  `&details=${encodeURIComponent(details)}`;
+
+const talks = [
+  {
+    title: "FormulaCode",
+    day: "Tuesday",
+    time: "2:00 PM",
+    location: "Hall A #2201 (Poster)",
+    startISO: "2026-07-07T14:00:00+09:00",
+    endISO: "2026-07-07T16:00:00+09:00",
+    description:
+      "A benchmark for competitive-programming-style code optimization.",
+    icml: "https://icml.cc/virtual/2026/poster/63544",
+    gcal: gcal(
+      "FormulaCode (Poster) - ICML 2026",
+      "20260707T140000",
+      "20260707T160000",
+      "Hall A #2201, COEX Convention Center, Seoul, South Korea",
+      "FormulaCode poster at ICML 2026. Presenter: Atharva Sehgal (atharvas@caltech.edu). https://icml.cc/virtual/2026/poster/63544",
+    ),
+  },
+  {
+    title: "PWW-Bench",
+    day: "Saturday",
+    time: "11:00 AM",
+    location: "Hall D1",
+    startISO: "2026-07-11T11:00:00+09:00",
+    endISO: "2026-07-11T13:00:00+09:00",
+    description:
+      "A benchmark evaluating the mathematical problem-solving skills of VLMs. (w/ Sabrina Reguyal)",
+    icml: "https://icml.cc/virtual/2026/82436",
+    gcal: gcal(
+      "PWW-Bench - ICML 2026",
+      "20260711T110000",
+      "20260711T130000",
+      "Hall D1, COEX Convention Center, Seoul, South Korea",
+      "PWW-Bench (w/ Sabrina Reguyal) at ICML 2026. Presenter: Atharva Sehgal (atharvas@caltech.edu). https://icml.cc/virtual/2026/82436",
+    ),
+  },
+  {
+    title: "Vendi-Evolve",
+    day: "Saturday",
+    time: "3:45 PM",
+    location: "Room 401",
+    startISO: "2026-07-11T15:45:00+09:00",
+    endISO: "2026-07-11T17:45:00+09:00",
+    description:
+      "An AlphaEvolve extension exploring an information-theoretic diversity measure to improve exploration diversity.",
+    icml: "https://icml.cc/virtual/2026/68548",
+    gcal: gcal(
+      "Vendi-Evolve - ICML 2026",
+      "20260711T154500",
+      "20260711T174500",
+      "Room 401, COEX Convention Center, Seoul, South Korea",
+      "Vendi-Evolve at ICML 2026. Presenter: Atharva Sehgal (atharvas@caltech.edu). https://icml.cc/virtual/2026/68548",
+    ),
+  },
+];
+
+// --- SEO ---
+const pageUrl = "https://atharvas.net/icml";
+const pageTitle = "Atharva Sehgal @ ICML 2026 — Talks, Times & Locations";
+const pageDescription =
+  "Atharva Sehgal is presenting three projects at ICML 2026 in Seoul: FormulaCode, PWW-Bench, and Vendi-Evolve. Times, locations at the COEX Convention Center, and add-to-calendar links.";
+const ogImage = "https://atharvas.net/static/profile2_sm.png";
+
+// Schema.org structured data — a ProfilePage listing three Events so Google can
+// surface event rich results / an "events" carousel.
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://atharvas.net/#person",
+      name: "Atharva Sehgal",
+      url: "https://atharvas.net",
+      email: "atharvas@caltech.edu",
+      affiliation: {
+        "@type": "Organization",
+        name: "California Institute of Technology",
+      },
+      sameAs: [
+        "https://x.com/atharva_sehgal/",
+        "https://github.com/atharvas",
+        "https://scholar.google.com/citations?user=dj1yDdIAAAAJ&hl=en",
+      ],
+    },
+    ...talks.map((t) => ({
+      "@type": "Event",
+      name: `${t.title} — ICML 2026`,
+      description: t.description,
+      startDate: t.startISO,
+      endDate: t.endISO,
+      eventStatus: "https://schema.org/EventScheduled",
+      eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+      url: t.icml,
+      location: {
+        "@type": "Place",
+        name: `${t.location}, COEX Convention Center`,
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "513 Yeongdong-daero, Gangnam-gu",
+          addressLocality: "Seoul",
+          addressCountry: "KR",
+        },
+      },
+      performer: { "@id": "https://atharvas.net/#person" },
+      organizer: {
+        "@type": "Organization",
+        name: "International Conference on Machine Learning (ICML) 2026",
+        url: "https://icml.cc/",
+      },
+      superEvent: {
+        "@type": "Event",
+        name: "ICML 2026",
+        url: "https://icml.cc/Conferences/2026",
+      },
+    })),
+  ],
+};
+---
+
+<!doctype html>
+<html lang="en" class="bg-slate-50 min-w-[300px]">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription} />
+    <meta name="author" content="Atharva Sehgal" />
+    <meta
+      name="keywords"
+      content="Atharva Sehgal, ICML 2026, Seoul, COEX, FormulaCode, PWW-Bench, Vendi-Evolve, self-evolving agents, machine learning conference"
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href={pageUrl} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="atharvas.net" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:url" content={pageUrl} />
+    <meta property="og:image" content={ogImage} />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:creator" content="@atharva_sehgal" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={pageDescription} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} is:inline />
+  </head>
+  <body>
+    <div class="flex justify-center">
+      <div class="w-full max-w-xl py-10 px-5">
+        <!-- Header -->
+        <header class="text-center">
+          <p class="text-sm font-semibold uppercase tracking-widest text-teal-700">
+            ICML 2026 · Seoul
+          </p>
+          <h1 class="mt-2 text-4xl font-bold tracking-tight text-gray-900">
+            Atharva Sehgal
+          </h1>
+          <p class="mt-4 text-lg text-gray-700">
+            I'm presenting three projects on agents that evolve over time. Happy
+            to chat about building, deploying, and training self-evolving agents!
+          </p>
+          <p class="mt-1 text-sm text-gray-500">
+            Everything is at the COEX Convention Center, Seoul.
+          </p>
+        </header>
+
+        <!-- Primary actions -->
+        <div class="mt-8 flex flex-col gap-3">
+          <a
+            href={bookingLink}
+            class="flex items-center justify-center gap-2 rounded-xl bg-teal-700 px-5 py-3 text-base font-semibold text-white shadow-sm transition hover:bg-teal-800"
+          >
+            <Fragment set:html={calCheckIcon.html} />
+            <span>Book a time to meet</span>
+          </a>
+          <div class="flex gap-3">
+            <a
+              href={twitterLink}
+              class="flex flex-1 items-center justify-center gap-2 rounded-xl border border-gray-300 bg-white px-5 py-3 text-base font-medium text-gray-800 transition hover:border-gray-400 hover:bg-gray-50"
+            >
+              <Fragment set:html={twitterIcon.html} />
+              <span>DM me</span>
+            </a>
+            <a
+              href="/icml2026.ics"
+              download
+              class="flex flex-1 items-center justify-center gap-2 rounded-xl border border-gray-300 bg-white px-5 py-3 text-base font-medium text-gray-800 transition hover:border-gray-400 hover:bg-gray-50"
+            >
+              <Fragment set:html={calPlusIcon.html} />
+              <span>All events (.ics)</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Talks -->
+        <section class="mt-10 flex flex-col gap-4">
+          {
+            talks.map((talk) => (
+              <div class="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm">
+                <div class="flex items-baseline justify-between gap-3">
+                  <h2 class="text-xl font-bold text-gray-900">{talk.title}</h2>
+                  <span class="whitespace-nowrap text-sm font-semibold text-teal-700">
+                    {talk.day}
+                  </span>
+                </div>
+                <p class="mt-2 text-gray-700">{talk.description}</p>
+                <div class="mt-3 flex flex-wrap gap-x-5 gap-y-1 text-sm text-gray-600">
+                  <span class="flex items-center gap-1.5">
+                    <Fragment set:html={clockIcon.html} />
+                    {talk.time}
+                  </span>
+                  <span class="flex items-center gap-1.5">
+                    <Fragment set:html={pinIcon.html} />
+                    {talk.location}
+                  </span>
+                </div>
+                <div class="mt-4 flex flex-wrap gap-2">
+                  <a
+                    href={talk.gcal}
+                    target="_blank"
+                    rel="noopener"
+                    class="flex items-center gap-2 rounded-lg bg-teal-50 px-3 py-2 text-sm font-medium text-teal-800 transition hover:bg-teal-100"
+                  >
+                    <Fragment set:html={calPlusIcon.html} />
+                    <span>Add to calendar</span>
+                  </a>
+                  <a
+                    href={talk.icml}
+                    target="_blank"
+                    rel="noopener"
+                    class="flex items-center gap-2 rounded-lg border border-gray-200 px-3 py-2 text-sm font-medium text-gray-700 transition hover:bg-gray-50"
+                  >
+                    <Fragment set:html={extLinkIcon.html} />
+                    <span>icml.cc</span>
+                  </a>
+                </div>
+              </div>
+            ))
+          }
+        </section>
+
+        <footer class="mt-10 text-center text-sm text-gray-500">
+          <p>
+            <Link href="/">atharvas.net</Link> · "Add to calendar" opens Google
+            Calendar; the <Link href="/icml2026.ics">.ics</Link> works on Apple &amp;
+            Outlook too.
+          </p>
+        </footer>
+      </div>
+    </div>
+  </body>
+  <style is:global>
+    .svg-inline--fa {
+      overflow: visible;
+      box-sizing: content-box;
+      display: inline-block;
+      height: 1em;
+      vertical-align: -0.125em;
+    }
+  </style>
+</html>
