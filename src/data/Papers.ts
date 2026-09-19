@@ -1,6 +1,100 @@
 export const PaperItems = [
   {
     hide: false,
+    title: "AI Data Technician: An Expert-Guided Program Synthesis Agent for Scientific Data Processing",
+    url: "https://openreview.net/forum?id=tAbnAcHvpk",
+    authors: "Yuan Sui, Geeling Chau, Nicholas Abram, Allison Xin, _Atharva Sehgal_, Robert Kim, Ueli Rutishauser, Yisong Yue",
+    date: "October 2026",
+    venue: "COLM 2026 (LM4Sci Workshop)",
+    description: "",
+    links: [
+      {
+        name: "Paper",
+        url: "https://openreview.net/forum?id=tAbnAcHvpk",
+      },
+    ],
+  },
+  {
+    hide: false,
+    title: "Knowledge-Centric Self-Improvement",
+    url: "https://arxiv.org/abs/2607.19592",
+    authors: "Xuefei (Julie) Wang, Lauren Hyoseo Yoon, Chengrui Qu, Amanda Zichang Wang, _Atharva Sehgal_, Eric Mazumdar, Yisong Yue",
+    date: "July 2026",
+    venue: "Preprint",
+    description: "",
+    links: [
+      {
+        name: "Paper",
+        url: "https://arxiv.org/abs/2607.19592",
+      },
+      {
+        name: "Code",
+        url: "https://github.com/recursive-knowledge/KSI",
+      },
+    ],
+  },
+  {
+    hide: false,
+    title: "VendiEvolve: Towards Diversity-Aware LLM-Guided Evolutionary Search",
+    url: "https://genaicreativity.org/icml2026/files/40/40_paper.pdf",
+    authors: "Lei Lei, _Atharva Sehgal_, Lauren Hyoseo Yoon, Xuefei (Julie) Wang, Swarat Chaudhuri, Yisong Yue",
+    date: "July 2026",
+    venue: "ICML 2026 (GenAICreativity Workshop)",
+    description: "",
+    links: [
+      {
+        name: "Paper",
+        url: "https://genaicreativity.org/icml2026/files/40/40_paper.pdf",
+      },
+    ],
+  },
+  {
+    hide: false,
+    title: "PWW-Bench: Probing Visual Mathematical Reasoning with Proofs Without Words",
+    url: "https://openreview.net/forum?id=tKdAywYf9p",
+    authors: "Sabrina Reguyal, Rahul Saha, Alan Li, _Atharva Sehgal_",
+    date: "July 2026",
+    venue: "ICML 2026 (AI4Math Workshop)",
+    description: "",
+    links: [
+      {
+        name: "Paper",
+        url: "https://openreview.net/forum?id=tKdAywYf9p",
+      },
+    ],
+  },
+  {
+    hide: false,
+    title: "AgentBayes: Open-Ended Scientific Model Discovery",
+    url: "https://alexfarhang.github.io/assets/pdf/AgentBayes-preprint.pdf",
+    authors: "Alexander R. Farhang, Anne L. Erickson, _Atharva Sehgal_, Yisong Yue",
+    date: "May 2026",
+    venue: "Preprint",
+    description: "",
+    links: [
+      {
+        name: "Paper",
+        url: "https://alexfarhang.github.io/assets/pdf/AgentBayes-preprint.pdf",
+      },
+    ],
+  },
+  {
+    hide: false,
+    title: "Accelerating Scientific Workflows with Language-Guided Evolutionary Algorithms",
+    url: "https://repositories.lib.utexas.edu/items/f0feacaa-9cf9-44f7-bcf8-f8c75250adc5",
+    authors: "_Atharva Sehgal_",
+    date: "May 2026",
+    venue: "PhD Thesis, UT Austin",
+    description: "",
+    links: [
+      {
+        name: "Thesis",
+        url: "https://repositories.lib.utexas.edu/items/f0feacaa-9cf9-44f7-bcf8-f8c75250adc5",
+      },
+    ],
+  },
+  {
+    hide: false,
     title: "Programmatic Context Augmentation for LLM-based Symbolic Regression",
     url: "https://arxiv.org/abs/2605.03101",
     authors: "Hao Liu, Xiao-Wen Yang, _Atharva Sehgal_, Yixin Wang, Lan-Zhe Guo, Yu-Feng Li, Yisong Yue",
@@ -57,6 +151,21 @@ export const PaperItems = [
       {
         name: "Paper",
         url: "https://arxiv.org/abs/2512.06006",
+      },
+    ],
+  },
+  {
+    hide: false,
+    title: "Agentic Discovery of Multi-Channel Bioacoustic Association Algorithms",
+    url: "https://openreview.net/forum?id=JzKBhjoHad",
+    authors: "Paramjyoti Mohapatra, Irina Tolkova, Akanksha Sarkar, _Atharva Sehgal_, Daniel P. Salisbury, Andrew L. Von Duyke, Léa Bouffaut, Holger Klinck, Jennifer J. Sun",
+    date: "April 2026",
+    venue: "ICLR 2026 (FM4Science Workshop)",
+    description: "",
+    links: [
+      {
+        name: "Paper",
+        url: "https://openreview.net/forum?id=JzKBhjoHad",
       },
     ],
   },
